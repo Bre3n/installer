@@ -1,0 +1,1 @@
+Instalator nie działa i chuj

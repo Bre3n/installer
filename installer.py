@@ -1,3 +1,4 @@
+#lat
 def downloader(url, path, var):
     with open(path, "wb") as f:
         response = requests.get(url, stream=True)

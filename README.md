@@ -1,1 +1,1 @@
-Instalator nie działa i chuj
+Instalator nie działa i nie bedzie.

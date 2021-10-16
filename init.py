@@ -158,7 +158,7 @@ class MyWindow(QMainWindow):
         self.wersje.setText(f"v{wersja}")
         self.wersje.move(580, 580)
         self.wersje.resize(50, 25)
-        self.wersje.setStyleSheet(f"background-color: #{background_color_hex};")
+        self.wersje.setStyleSheet(f"background-color: #800080;")
         self.wersje.setFont(QFont("{font}", 15))
 
         self.b1 = QtWidgets.QPushButton(self)
@@ -290,6 +290,13 @@ class MyWindow(QMainWindow):
 
         self.menu()
 
+        self.msg.setIcon(QMessageBox.Warning)
+        self.msg.setText(
+            "Mam dobrą i złą wiadomość.\n\nDobra - Inicjacja przeprowadzona pomyślnie.\n\nZła - Program nie działa.\n\nZakończono wsparcie programu, praktycznie żadne funkcje prócz usuwania modów nie działają\n\nMożliwe że ten przeobrazi się na inny podobnego typu lecz znacznie lepszy\n\n\n(work in progress)"
+        )
+        self.msg.exec_()
+        self.msg.setIcon(QMessageBox.Information)
+
     def wersjee(self, funkcje):
         self.odlacz()
 
@@ -402,7 +409,7 @@ class MyWindow(QMainWindow):
 
     def wersjemcUI(self, var, czy):
         if czy == 1:
-            self.check(var)
+            pass
         if path.exists(f"{sciezka}/mods") == True:
             if settings[2] == "P":
                 if czy == 1:
@@ -1412,7 +1419,7 @@ class MyWindow(QMainWindow):
     def forge(self, wybor):
         if wybor == 1:
             forge_sciezka = f"{temp}/forge-instalation-1.16.5"
-            forge_url = "https://www.dropbox.com/s/98rbxhqqew6otz2/forge-installer-1.16.5.jar?dl=1"
+            forge_url = "https://www.dropbox.com/s/dxb6y05ozgmq1u6/forge-installer-1.16.5.jar?dl=1"
         else:
             forge_sciezka = f"{temp}/forge-instalation-1.12.2"
             forge_url = "https://www.dropbox.com/s/qvet4nvptz8ie0i/forge-installer-1.12.2.jar?dl=1"
@@ -1590,14 +1597,14 @@ class MyWindow(QMainWindow):
             changelog(f"Wykryto oprogramowania JAVA wersja {java_ver()}")
             print(java_ver())
         if wybor == 1:
-            if path.exists(f"{sciezka}/versions/1.16.5-forge-36.0.48") == False:
-                print("\nNie wykryto oprogramowania FORGE 1.16.5-forge-36.0.48")
+            if path.exists(f"{sciezka}/versions/1.16.5-forge-36.2.2") == False:
+                print("\nNie wykryto oprogramowania FORGE 1.16.5-forge-36.2.2")
                 print("Pobieranie...")
                 changelog("Nie wykryto oprogramowania FORGE")
                 self.forge(wybor)
             else:
-                print("\nPomyślnie wykryto oprogramowanie FORGE 1.16.5-forge-36.0.48")
-                changelog("Wykryto oprogramowania Forge wersja: 1.16.5-forge-36.0.48")
+                print("\nPomyślnie wykryto oprogramowanie FORGE 1.16.5-forge-36.2.2")
+                changelog("Wykryto oprogramowania Forge wersja: 1.16.5-forge-36.2.2")
         else:
             if path.exists(f"{sciezka}/versions/1.12.2-forge-14.23.5.2854") == False:
                 print("\nNie wykryto oprogramowania FORGE")
